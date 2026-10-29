@@ -6,7 +6,7 @@
 
 ## Потеря соединения
 
-В ReceiveThread.run() вызов self.net.recv() находится в try/except (OSError, ValueError). Если recv() вернул None (сервер закрыл соединение), цикл тоже завершается. После выхода из цикла поток отправляет сигнал connection_lost. В MainWindow он подключён к on_connection_lost(): в чат выводится сообщение "Соединение с сервером потеряно", поле ввода и кнопка Send блокируются
+В ReceiveThread.run() вызов self.net.recv() находится в try/except (OSError). Если recv() вернул None (сервер закрыл соединение), цикл тоже завершается. После выхода из цикла поток отправляет сигнал connection_lost. В MainWindow он подключён к on_connection_lost(): в чат выводится сообщение "Соединение с сервером потеряно", поле ввода и кнопка Send блокируются
 
 ## Остановка SendThread
 
